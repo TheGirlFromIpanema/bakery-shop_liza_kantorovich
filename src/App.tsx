@@ -26,6 +26,7 @@ function App() {
                 <Route path={Paths.PRODUCTS} element={<NavigatorDeskTop items={productItems} sub={'sub'}/>}>
                     <Route path={Paths.BREAD} element={<Bread/>}/>
                     <Route path={Paths.DAIRY} element={<Dairy/>}/>
+                    <Route path={Paths.BACK} element={<Navigate to={Paths.HOME}/> }/>
                 </Route>
             </Route>
             <Route path="/error" element={<ErrorPage/>}/>
