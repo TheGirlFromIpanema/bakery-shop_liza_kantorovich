@@ -6,9 +6,9 @@ export const navItems: RouteType[] = [
     {path: Paths.CART, title: 'Shopping Cart', role: Roles.USER},
     {path: Paths.CUSTOMERS, title: 'Customers', role: Roles.ADMIN},
     {path: Paths.PRODUCTS, title: 'Products', role: Roles.ALL},
-    {path: Paths.LOGIN, title: 'Login', role: Roles.NO_AUTH},
-    {path: Paths.LOGOUT, title: 'Logout', role: Roles.USER},
-    {path: Paths.SIGNUP, title: 'Signup', role: Roles.NO_AUTH},
+    {path: Paths.LOGIN, title: 'Log in', role: Roles.NO_AUTH},
+    {path: Paths.LOGOUT, title: 'Log out', role: Roles.USER},
+    {path: Paths.SIGNUP, title: 'Sign up', role: Roles.NO_AUTH},
 ]
 
 export const productItems: RouteType[] = [

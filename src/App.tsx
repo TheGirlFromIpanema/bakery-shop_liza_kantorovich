@@ -7,7 +7,6 @@ import Orders from "./components/Orders.tsx";
 import ShoppingCart from "./components/ShoppingCart.tsx";
 import Bread from "./components/Bread.tsx";
 import Dairy from "./components/Dairy.tsx";
-//import Navigator from "./components/navigation/Navigator.tsx";
 import {navItems, productItems} from "./configurations/nav-config.ts";
 import ErrorPage from "./components/servicePages/ErrorPage.tsx";
 import NavigatorDeskTop from "./components/navigation/NavigatorDeskTop.tsx";
@@ -22,7 +21,7 @@ function App() {
     const location = useLocation();
     const navigate = useNavigate();
     useEffect(() => {
-        if(location.pathname === `/${Paths.ERROR}`)
+        if (location.pathname === `/${Paths.ERROR}`)
             navigate('/')
     }, []);
 
@@ -31,7 +30,7 @@ function App() {
     const predicate = (item: RouteType) => {
         return (
             item.role === Roles.ALL ||
-            item.role === Roles.USER && authUser ||
+            item.role === Roles.USER && authUser && (!authUser.includes('admin') || item.path !== Paths.CART) ||
             item.role === Roles.ADMIN && authUser && authUser.includes('admin') ||
             item.role === Roles.NO_AUTH && !authUser
         )
