@@ -16,6 +16,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import ColorModeSelect from "../shared-theme/ColorModeSelect.tsx";
 import ForgotPassword from "./components/ForgotPassword.tsx";
 import {useNavigate} from "react-router-dom";
+import {GoogleIcon} from "../../signUp/components/CustomIcons.tsx";
 
 const Card = styled(MuiCard)(({theme}) => ({
   display: 'flex',
@@ -199,6 +200,14 @@ export default function SignInForm(props: Props) {
             </Box>
             <Divider>or</Divider>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+              <Button
+                  fullWidth
+                  variant="outlined"
+                  onClick={() => props.submitFn({email:"GOOGLE", password:""})}
+                  startIcon={<GoogleIcon/>}
+              >
+                Sign in with Google
+              </Button>
               <Typography sx={{ textAlign: 'center' }}>
                 Don&apos;t have an account?{' '}
                 <Link onClick={()=> navigate('/signup')}

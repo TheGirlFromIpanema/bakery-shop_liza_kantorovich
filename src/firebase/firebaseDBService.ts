@@ -1,13 +1,11 @@
-import
-{
+import {
     doc,
     collection,
     // getDoc,
     setDoc,
     // deleteDoc,
     // getCountFromServer
-}
-    from 'firebase/firestore';
+}    from 'firebase/firestore';
 import {db} from "../configurations/firebase-config.ts";
 import {ProductType} from "../utils/shop-types.ts";
 import {getRandomNumber} from "../utils/tools.ts";
