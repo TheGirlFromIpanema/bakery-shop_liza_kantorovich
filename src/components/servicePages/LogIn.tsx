@@ -5,8 +5,7 @@ import {useNavigate} from "react-router-dom";
 import SignIn from "../templates/signIn/sign-in/SignIn.tsx";
 import {LoginData} from "../../utils/shop-types.ts";
 import {login} from "../../firebase/firebaseAuthService.ts";
-import {changeName} from "../../redux/slices/userInfoSlice.ts";
-
+import {currentAvatar, currentName} from "../../redux/slices/userInfoSlice.ts";
 
 const LogIn = () => {
     const navigate = useNavigate();
@@ -17,7 +16,8 @@ const LogIn = () => {
         try{
             const res = await login(loginData);
             dispatch(loginAction(res.email));
-            dispatch(changeName(res.name))
+            dispatch(currentName(res.name));
+            dispatch(currentAvatar(res.avatar));
             navigate('/');
         }catch (e) {
             console.log(e) //Todo

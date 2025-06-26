@@ -3,7 +3,7 @@ import {RouteType} from "../../utils/shop-types.ts";
 import {AppBar, Box, Tab, Tabs} from "@mui/material";
 import {Link, Outlet, useLocation} from "react-router-dom";
 import {useEffect} from "react";
-import {useAppSelector} from "../../redux/hooks.ts";
+import UserInfo from "../UserInfo.tsx";
 
 type Props = {
     items: RouteType[],
@@ -14,7 +14,6 @@ const NavigatorDeskTop: React.FC<Props> = ({items}) => {
 
     const location = useLocation();
     const [value, setValue] = React.useState(0);
-    const {name} = useAppSelector(state => state.userInfo);
 
     const currentTab = items.findIndex(item => location.pathname === `/${item.path}` || location.pathname === item.path);
 
@@ -42,7 +41,7 @@ const NavigatorDeskTop: React.FC<Props> = ({items}) => {
                         <Tab key={item.path} label={item.title} component={Link} to={item.path}/>
                     )};
                 </Tabs></div>
-                <div style={{marginRight: "40px", color: "black"}}>{name}</div>
+                <UserInfo />
             </AppBar>
             <Outlet/>
         </Box>)

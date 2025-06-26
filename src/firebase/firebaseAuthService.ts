@@ -14,7 +14,7 @@ const loginWithEmail = async (data: LoginData) => {
     const result = await signInWithEmailAndPassword(auth, data.email, data.password);
     const user = result.user;
     console.log(user);
-    return {email: data.email, name: user.displayName || "User"};
+    return {email: data.email, name: user.displayName || "User", avatar: user.photoURL};
 }
 
 const loginWithGoogle = async () => {
@@ -22,7 +22,7 @@ const loginWithGoogle = async () => {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
     console.log(auth.currentUser);
-    return Promise.resolve({email: user.email, name: user.displayName});
+    return Promise.resolve({email: user.email, name: user.displayName, avatar: user.photoURL});
 }
 
 export const login = async (data: LoginData) => {
@@ -39,4 +39,16 @@ export const registerWithEmailAndPassword = async (data: RegisterData) => {
 
 export const exit = async () => {
     await signOut(auth);
+}
+
+export const changeAvatar = async (newAvatar:string) => {
+    const user = auth.currentUser;
+    if (user && newAvatar)
+        await updateProfile(user, {photoURL: newAvatar});
+}
+
+export const changeName = async (newName:string) => {
+    const user = auth.currentUser;
+    if (user && newName)
+        await updateProfile(user, {displayName: newName});
 }
