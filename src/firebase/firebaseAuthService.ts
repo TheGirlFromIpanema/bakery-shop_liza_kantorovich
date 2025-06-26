@@ -3,16 +3,18 @@ import {
     signInWithEmailAndPassword,
     signInWithPopup,
     GoogleAuthProvider,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword,
+    updateProfile,
 } from 'firebase/auth';
-import type {LoginData} from "../utils/shop-types.ts";
+import type {LoginData, RegisterData} from "../utils/shop-types.ts";
 import {auth} from "../configurations/firebase-config.ts";
 
 
 const loginWithEmail = async (data: LoginData) => {
-    await signInWithEmailAndPassword(auth, data.email, data.password);
-    console.log(auth.currentUser);
-    return {email: data.email, name: data.email};
+    const result = await signInWithEmailAndPassword(auth, data.email, data.password);
+    const user = result.user;
+    console.log(user);
+    return {email: data.email, name: user.displayName || "User"};
 }
 
 const loginWithGoogle = async () => {
@@ -27,8 +29,11 @@ export const login = async (data: LoginData) => {
     return data.email === "GOOGLE" ? loginWithGoogle() : loginWithEmail(data)
 }
 
-export const registerWithEmailAndPassword = async (data: LoginData) => {
-    await createUserWithEmailAndPassword(auth, data.email, data.password)
+export const registerWithEmailAndPassword = async (data: RegisterData) => {
+    const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password)
+    const user = userCredential.user;
+    console.log(user);
+    await updateProfile(user, {displayName: data.name})
     return data.email;
 }
 
