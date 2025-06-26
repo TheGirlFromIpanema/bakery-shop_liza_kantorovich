@@ -12,7 +12,7 @@ import {auth} from "../configurations/firebase-config.ts";
 const loginWithEmail = async (data: LoginData) => {
     await signInWithEmailAndPassword(auth, data.email, data.password);
     console.log(auth.currentUser);
-    return data.email;
+    return {email: data.email, name: data.email};
 }
 
 const loginWithGoogle = async () => {
@@ -20,7 +20,7 @@ const loginWithGoogle = async () => {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
     console.log(auth.currentUser);
-    return Promise.resolve(user.email)
+    return Promise.resolve({email: user.email, name: user.displayName});
 }
 
 export const login = async (data: LoginData) => {
