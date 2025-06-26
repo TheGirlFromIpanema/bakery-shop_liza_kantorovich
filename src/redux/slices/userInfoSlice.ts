@@ -9,7 +9,7 @@ const userInfoSlice = createSlice({
     },
     reducers: {
         currentName(state, action) {
-            state.name = action.payload || "";
+            state.name = action.payload || "Unknown";
         },
         currentAvatar(state, action) {
             state.avatar = action.payload || "./public/baseProfile.png";
