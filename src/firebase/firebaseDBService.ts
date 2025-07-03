@@ -6,9 +6,9 @@ import {
     deleteDoc,
     getCountFromServer
 } from 'firebase/firestore';
-import {db} from "../configurations/firebase-config.ts";
-import {CategoryType, ProductType} from "../utils/shop-types.ts";
-import {getRandomNumber} from "../utils/tools.ts";
+import {db} from "../configurations/firebase-config";
+import {CategoryType, ProductType} from "../utils/shop-types";
+import {getRandomNumber} from "../utils/tools";
 import productConfig from "../configurations/products-config.json"
 import {Observable} from "rxjs";
 import {collectionData} from 'rxfire/firestore'
