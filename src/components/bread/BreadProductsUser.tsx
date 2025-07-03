@@ -10,10 +10,14 @@ const BreadProductsUser = () => {
     const {currProds} = useAppSelector(state => state.products)
 
     return (
-        <Grid container>
+        <Grid container spacing={2} justifyContent="flex-start" alignItems="stretch">
             {currProds.map((item:ProductType)=>
             <Grid key={item.id!} size={{xs:12, sm: 6, md: 3}}>
-                <Card sx={{ maxWidth: 345 }}>
+                <Card sx={{
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column'
+                }}>
                     <CardMedia
                         sx={{ height: 140 }}
                         image={"/images/" + item.img}
@@ -24,14 +28,13 @@ const BreadProductsUser = () => {
                             {item.title}
                         </Typography>
                         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                            species, ranging across all continents except Antarctica
+                            {item.description}
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <Button size="small">+</Button>
-                        <Typography>0</Typography>
                         <Button size="small">-</Button>
+                        <Typography>0</Typography>
+                        <Button size="small">+</Button>
                     </CardActions>
                 </Card>
             </Grid>

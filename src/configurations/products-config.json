@@ -1,32 +1,182 @@
 [
-   {"name": "biscuits-cookies-treats", "cost":10.60, "unit": "100g"},
-   {"name": "bread-baguette-herb", "cost":8, "unit": "piece"},
-   {"name": "bread-baguettes-crust", "cost":3, "unit": "piece"},
-   {"name": "bread-buns", "cost":5.90, "unit": "piece"},
-   {"name": "bread-crispy-carbohydrates", "cost":5, "unit": "piece"},
-   {"name": "bread-loaf-artisan", "cost":12, "unit": "piece"},
-   {"name": "bread-loaf-slices", "cost":12.50, "unit": "piece"},
-   {"name": "bread-loaf-white", "cost":9.90, "unit": "piece"},
-   {"name": "bread-loaves-crust", "cost":5.80, "unit": "piece"},
-   {"name": "bread-loaves", "cost":5.80, "unit": "piece"},
-   {"name": "bread-white-nutrition", "cost":10.50, "unit": "piece"},
-   {"name": "bread-whole-wheat-organic", "cost":18.90, "unit": "piece"},
-   {"name": "cake-bowl-gugelhupf", "cost":15.30, "unit": "piece"},
-   {"name": "cake-chocalate-happy-birthday", "cost":35.80, "unit": "piece"},
-   {"name": "cake-crumble-pastry", "cost":50.50, "unit": "piece"},
-   {"name": "croissants-jam-breakfast", "cost":15, "unit": "piece"},
-   {"name": "pizza-rolls", "cost":12.50, "unit": "piece"},
-   {"name": "pretzels-crispy-salty", "cost":5.90, "unit": "100g"},
-   {"name": "sweets-blueberries-dessert", "cost":12.50, "unit": "piece"},
-   {"name": "sweets-cookies-chocolate", "cost":9.90, "unit": "100g"},
-   {"name": "sweets-cream-puffs", "cost":3.50, "unit": "piece"},
-   {"name": "sweets-cupcakes-chocolate-muffins", "cost":3.90, "unit": "piece"},
-   {"name": "sweets-cupcakes-muffins", "cost":3.90, "unit": "piece"},
-   {"name": "sweets-macarors-colorful-box", "cost":65.80, "unit": "box"},
-   {"name": "sweets-macarors-pastries", "cost":10.90, "unit": "100g"},
-   {"name": "sweets-macarors-pinkphone-wallpaper", "cost":9.90, "unit": "100g"},
-   {"name": "sweets-strawberry-cupcakes", "cost":5.90, "unit": "piece"},
-   {"name": "tart-apple-pie-crispy", "cost":12.50, "unit": "piece"},
-   {"name": "tart-chocolate-coffee", "cost":11.90, "unit": "piece"},
-   {"name": "tart-pie-pastry", "cost":10.90, "unit": "piece"}
+   {
+      "name": "biscuits-cookies-treats",
+      "cost": 10.60,
+      "unit": "100g",
+      "description": "A delightful mix of crispy biscuits and sweet treats, perfect for snacking."
+   },
+   {
+      "name": "bread-baguette-herb",
+      "cost": 8,
+      "unit": "piece",
+      "description": "Classic French baguette infused with aromatic herbs for extra flavor."
+   },
+   {
+      "name": "bread-baguettes-crust",
+      "cost": 3,
+      "unit": "piece",
+      "description": "Crunchy golden-crust baguette, perfect for sandwiches or dipping."
+   },
+   {
+      "name": "bread-buns",
+      "cost": 5.90,
+      "unit": "piece",
+      "description": "Soft, fluffy bread buns ideal for burgers or breakfast spreads."
+   },
+   {
+      "name": "bread-crispy-carbohydrates",
+      "cost": 5,
+      "unit": "piece",
+      "description": "Crispy artisan bread, rich in texture and full of rustic flavor."
+   },
+   {
+      "name": "bread-loaf-artisan",
+      "cost": 12,
+      "unit": "piece",
+      "description": "Handcrafted artisan loaf with a crisp crust and soft, airy crumb."
+   },
+   {
+      "name": "bread-loaf-slices",
+      "cost": 12.50,
+      "unit": "piece",
+      "description": "Pre-sliced loaf of soft white bread — fresh and ready for toasting."
+   },
+   {
+      "name": "bread-loaf-white",
+      "cost": 9.90,
+      "unit": "piece",
+      "description": "Traditional white loaf with a mild taste and tender crumb."
+   },
+   {
+      "name": "bread-loaves-crust",
+      "cost": 5.80,
+      "unit": "piece",
+      "description": "Crusty loaves with a golden finish — perfect with soups and spreads."
+   },
+   {
+      "name": "bread-loaves",
+      "cost": 5.80,
+      "unit": "piece",
+      "description": "Classic fresh-baked loaves for everyday use."
+   },
+   {
+      "name": "bread-white-nutrition",
+      "cost": 10.50,
+      "unit": "piece",
+      "description": "Nutritious white bread enriched with vitamins and minerals."
+   },
+   {
+      "name": "bread-whole-wheat-organic",
+      "cost": 18.90,
+      "unit": "piece",
+      "description": "Organic whole-wheat bread — hearty, healthy, and fiber-rich."
+   },
+   {
+      "name": "cake-bowl-gugelhupf",
+      "cost": 15.30,
+      "unit": "piece",
+      "description": "Traditional Gugelhupf cake — moist, ring-shaped, and subtly sweet."
+   },
+   {
+      "name": "cake-chocalate-happy-birthday",
+      "cost": 35.80,
+      "unit": "piece",
+      "description": "Rich chocolate birthday cake, beautifully decorated for celebrations."
+   },
+   {
+      "name": "cake-crumble-pastry",
+      "cost": 50.50,
+      "unit": "piece",
+      "description": "Luscious fruit cake topped with a crunchy crumble crust."
+   },
+   {
+      "name": "croissants-jam-breakfast",
+      "cost": 15,
+      "unit": "piece",
+      "description": "Buttery croissant filled with sweet jam — a perfect breakfast choice."
+   },
+   {
+      "name": "pizza-rolls",
+      "cost": 12.50,
+      "unit": "piece",
+      "description": "Savory rolls filled with cheese and pizza sauce — great as snacks."
+   },
+   {
+      "name": "pretzels-crispy-salty",
+      "cost": 5.90,
+      "unit": "100g",
+      "description": "Crispy pretzels with a salty crunch — a classic snack favorite."
+   },
+   {
+      "name": "sweets-blueberries-dessert",
+      "cost": 12.50,
+      "unit": "piece",
+      "description": "Dessert pastry with fresh blueberries and a creamy filling."
+   },
+   {
+      "name": "sweets-cookies-chocolate",
+      "cost": 9.90,
+      "unit": "100g",
+      "description": "Chewy chocolate cookies with rich cocoa flavor."
+   },
+   {
+      "name": "sweets-cream-puffs",
+      "cost": 3.50,
+      "unit": "piece",
+      "description": "Light puff pastry filled with smooth vanilla cream."
+   },
+   {
+      "name": "sweets-cupcakes-chocolate-muffins",
+      "cost": 3.90,
+      "unit": "piece",
+      "description": "Soft chocolate muffins topped like cupcakes — double delight."
+   },
+   {
+      "name": "sweets-cupcakes-muffins",
+      "cost": 3.90,
+      "unit": "piece",
+      "description": "Moist vanilla cupcakes with a muffin twist — perfect for any time."
+   },
+   {
+      "name": "sweets-macarors-colorful-box",
+      "cost": 65.80,
+      "unit": "box",
+      "description": "Colorful box of assorted French macarons — elegant and delicious."
+   },
+   {
+      "name": "sweets-macarors-pastries",
+      "cost": 10.90,
+      "unit": "100g",
+      "description": "Delicate macaron pastries with assorted flavors and soft crunch."
+   },
+   {
+      "name": "sweets-macarors-pinkphone-wallpaper",
+      "cost": 9.90,
+      "unit": "100g",
+      "description": "Stylish pink macarons — sweet, trendy, and photogenic!"
+   },
+   {
+      "name": "sweets-strawberry-cupcakes",
+      "cost": 5.90,
+      "unit": "piece",
+      "description": "Strawberry-flavored cupcakes topped with fruity icing."
+   },
+   {
+      "name": "tart-apple-pie-crispy",
+      "cost": 12.50,
+      "unit": "piece",
+      "description": "Crispy apple tart filled with spiced apple slices and pastry cream."
+   },
+   {
+      "name": "tart-chocolate-coffee",
+      "cost": 11.90,
+      "unit": "piece",
+      "description": "Decadent tart with layers of chocolate and coffee-flavored filling."
+   },
+   {
+      "name": "tart-pie-pastry",
+      "cost": 10.90,
+      "unit": "piece",
+      "description": "Classic pie tart with a flaky crust and rich pastry base."
+   }
 ]

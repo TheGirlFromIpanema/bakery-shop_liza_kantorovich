@@ -63,7 +63,8 @@ export const setProducts = async () => {
             category: item.name.split("-")[0],
             unit: item.unit,
             cost: item.cost,
-            img: item.name + ".jpg"
+            img: item.name + ".jpg",
+            description: item.description,
         }));
         for (let i = 0; i < products.length; i++) {
             const temp = await isCategoryExists(products[i].category);
