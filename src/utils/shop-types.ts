@@ -48,3 +48,8 @@ export type ProductType = {
 export type CategoryType = {
     category_name: string,
 }
+
+export type ShopCartProdType = {
+    cartProdId: string,
+    count: number,
+}

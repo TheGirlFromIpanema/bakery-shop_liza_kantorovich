@@ -1,6 +1,6 @@
 import './App.css'
 import {Navigate, Route, Routes, useLocation, useNavigate} from "react-router-dom";
-import {Paths, ProductType, Roles, RouteType} from "./utils/shop-types.ts";
+import {Paths, ProductType, Roles, RouteType, ShopCartProdType} from "./utils/shop-types.ts";
 import Home from "./components/Home.tsx";
 import Customers from "./components/Customers.tsx";
 import Orders from "./components/Orders.tsx";
@@ -17,12 +17,16 @@ import {useEffect} from "react";
 import SignUp from "./components/servicePages/SignUp.tsx";
 import {getProducts} from "./firebase/firebaseDBService.ts";
 import {prodsUpd} from "./redux/slices/productSlice.ts";
+import {resetCart, setCart} from "./redux/slices/cartSlice.ts";
+import {getCartProducts} from "./firebase/firebaseCartService.ts";
 
 function App() {
 
     const location = useLocation();
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
+    const {authUser} = useAppSelector(state => state.auth);
+
     useEffect(() => {
         if (location.pathname === `/${Paths.ERROR}`)
             navigate('/')
@@ -34,10 +38,23 @@ function App() {
                 dispatch(prodsUpd(prods));
             }
         })
-        return () => {subscribtion.unsubscribe();}
+        return () => {
+            subscribtion.unsubscribe();
+        }
     }, []);
 
-    const {authUser} = useAppSelector(state => state.auth);
+    useEffect(() => {
+        if (!authUser || authUser.includes('admin'))
+            dispatch(resetCart());
+        else {
+            const subscribtion = getCartProducts(`${authUser}_collection`);
+            subscribtion.subscribe({
+                next: (cartProducts: ShopCartProdType[]) => dispatch(setCart(cartProducts))
+            })
+        }
+
+    }, []);
+
 
     const predicate = (item: RouteType) => {
         return (
