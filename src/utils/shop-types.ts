@@ -53,3 +53,5 @@ export type ShopCartProdType = {
     cartProdId: string,
     count: number,
 }
+
+export type TableShopCartDataType = ProductType & {count: number, amount: number}
