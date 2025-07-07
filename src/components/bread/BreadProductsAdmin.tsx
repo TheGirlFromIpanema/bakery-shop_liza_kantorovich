@@ -1,6 +1,8 @@
 import {useAppSelector} from "../../redux/hooks.ts";
-import {DataGrid, GridColDef} from "@mui/x-data-grid";
+import {DataGrid, GridActionsCellItem, GridColDef} from "@mui/x-data-grid";
 import {Avatar, Box} from "@mui/material";
+import {RemoveIcon} from "../templates/CustomIcons.tsx";
+import {removeProduct} from "../../firebase/firebaseDBService.ts";
 
 
 const BreadProductsAdmin = () => {
@@ -18,6 +20,13 @@ const BreadProductsAdmin = () => {
                 <Avatar src={'/images/' + params.value}/>
             )
             } },
+        {field:'actions', type:'actions', flex:0.3,
+            getActions: ({id}) => [
+                <GridActionsCellItem label={'remove'} icon = {<RemoveIcon/>}
+                                     onClick={() => removeProduct(id as string)}
+                />
+
+            ]}
     ]
 
 
